@@ -1,4 +1,5 @@
 package com.activitiesManagement.controller;
+import com.activitiesManagement.entity.Role;
 import com.activitiesManagement.entity.Users;
 import com.activitiesManagement.service.*;
 import com.activitiesManagement.service.implementation.UserServiceImpl;
@@ -32,6 +33,7 @@ public class AuthServlet extends HttpServlet {
            user.setUsername(username);
            user.setEmail(email);
            user.setPassword(password);
+           user.setRole(new Role((long) 1));
         userService.add(user);
 
     }
