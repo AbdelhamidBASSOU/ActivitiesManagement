@@ -6,6 +6,6 @@ import java.util.ArrayList;
 public interface UserService {
 
             Users add(Users u);
-
+    Users login(Users user);
 
 }

@@ -12,7 +12,12 @@ public class UserServiceImpl implements UserService {
         public Users add(Users user) {
             return userRepo.add(user);
         }
+
+    @Override
+    public Users login ( Users user ) {
+        return userRepo.login(user);
     }
+}
 
 
 
