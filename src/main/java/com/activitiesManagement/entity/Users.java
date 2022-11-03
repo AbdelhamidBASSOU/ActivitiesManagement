@@ -28,8 +28,6 @@ public class Users implements Serializable {
     @Column(name="password")
     private String password;
 
-
-
     @Column(name="state")
     private boolean state;
     @ManyToOne(fetch= FetchType.EAGER)
