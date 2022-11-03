@@ -1,4 +1,5 @@
 package com.activitiesManagement.controller;
+
 import com.activitiesManagement.entity.Role;
 import com.activitiesManagement.entity.Users;
 import com.activitiesManagement.service.*;
@@ -6,7 +7,6 @@ import com.activitiesManagement.service.implementation.UserServiceImpl;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-
 import java.io.IOException;
 
 @WebServlet(name = "AuthServlet", value = "/AuthServlet")
