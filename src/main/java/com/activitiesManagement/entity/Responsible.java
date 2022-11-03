@@ -1,0 +1,34 @@
+package com.activitiesManagement.entity;
+
+import jakarta.persistence.*;
+
+@Inheritance(strategy = InheritanceType.JOINED)
+@Table(name="Responsible")
+public class Responsible extends Users {
+
+    @Column(name="domain")
+    private String domain;
+
+    @Column(name="type")
+    @Enumerated(EnumType.STRING)
+    private TypeResponsible type;
+
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    public TypeResponsible getType() {
+        return type;
+    }
+
+    public void setType(TypeResponsible type) {
+        this.type = type;
+    }
+
+
+
+}
