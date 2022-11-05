@@ -1,18 +1,16 @@
 package com.activitiesManagement.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
+@Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name="participant")
 public class Participant extends Users {
 
-    @Column(name="domain")
+    @Column(name="domain", nullable = false)
     private String domain;
 
-    @Column(name="structure")
+    @Column(name="structure" , nullable = false)
     private String structure;
 
     public String getDomain() {
