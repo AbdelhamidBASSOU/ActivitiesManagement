@@ -64,7 +64,7 @@ public class Exercise {
     public void setId(Long id) {
         this.id = id;
     }
-    
+
     public Long getId() {
         return id;
     }
