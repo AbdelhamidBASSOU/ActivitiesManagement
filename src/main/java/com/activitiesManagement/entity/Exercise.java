@@ -2,6 +2,8 @@ package com.activitiesManagement.entity;
 
 import jakarta.persistence.*;
 
+
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -11,57 +13,79 @@ public class Exercise {
     @Column(name="id")
     private Long id;
 
-    @Temporal(TemporalType.DATE)
-    private Date year;
+    //@Temporal(TemporalType.DATE)
+    @Column(name= "annee")
+    private String year;
 
-    @Temporal(TemporalType.DATE)
-    private Date dateStart;
+    //@Temporal(TemporalType.DATE)
+    @Column(name = "dateStart")
+    private LocalDate dateStart;
 
-    @Temporal(TemporalType.DATE)
-    private Date endDate;
+    //@Temporal(TemporalType.DATE)
+    @Column(name = "endDate")
+    private LocalDate endDate;
 
     @Column(name="state")
     private boolean state;
 
+    public Long getId ( ) {
+        return id;
+    }
 
-    public Date getYear() {
+    public String getYear ( ) {
         return year;
     }
 
-    public void setYear(Date year) {
-        this.year = year;
-    }
-
-    public Date getDateStart() {
+    public LocalDate getDateStart ( ) {
         return dateStart;
     }
 
-    public void setDateStart(Date dateStart) {
-        this.dateStart = dateStart;
-    }
-
-    public Date getEndDate() {
+    public LocalDate getEndDate ( ) {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
-    public boolean isState() {
+    public boolean isState ( ) {
         return state;
     }
 
-    public void setState(boolean state) {
-        this.state = state;
-    }
-
-    public void setId(Long id) {
+    public void setId ( Long id ) {
         this.id = id;
     }
 
+    public void setYear ( String year ) {
+        this.year = year;
+    }
 
-    public Long getId() {
-        return id;
+    public void setDateStart ( LocalDate dateStart ) {
+        this.dateStart = dateStart;
+    }
+
+    public void setEndDate ( LocalDate endDate ) {
+        this.endDate = endDate;
+    }
+
+    public void setState ( boolean state ) {
+        this.state = state;
+    }
+
+    public Exercise ( ) {
+    }
+
+    public Exercise ( String year , LocalDate dateStart , LocalDate endDate , boolean state ) {
+        this.year = year;
+        this.dateStart = dateStart;
+        this.endDate = endDate;
+        this.state = state;
+    }
+
+    @Override
+    public String toString ( ) {
+        return "Exercise{" +
+                "id=" + id +
+                ", year='" + year + '\'' +
+                ", dateStart=" + dateStart +
+                ", endDate=" + endDate +
+                ", state=" + state +
+                '}';
     }
 }

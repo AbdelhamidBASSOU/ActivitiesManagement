@@ -30,15 +30,14 @@ public class Users implements Serializable {
 
     @Column(name="state")
     private boolean state;
+
     @ManyToOne(fetch= FetchType.EAGER)
     @JoinColumn(name = "idRole")
     private Role role;
 
-
     public void setId(Long idUser) {
         this.id = idUser;
     }
-
 
     public Long getId() {
         return id;
