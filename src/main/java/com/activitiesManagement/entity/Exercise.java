@@ -1,7 +1,7 @@
 package com.activitiesManagement.entity;
 
 import jakarta.persistence.*;
-import jdk.vm.ci.meta.Local;
+
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -28,44 +28,64 @@ public class Exercise {
     @Column(name="state")
     private boolean state;
 
+    public Long getId ( ) {
+        return id;
+    }
 
-    public String getYear() {
+    public String getYear ( ) {
         return year;
     }
 
-    public void setYear(String year) {
-        this.year = year;
-    }
-
-    public LocalDate getDateStart() {
+    public LocalDate getDateStart ( ) {
         return dateStart;
     }
 
-    public void setDateStart(LocalDate dateStart) {
-        this.dateStart = dateStart;
-    }
-
-    public LocalDate getEndDate() {
+    public LocalDate getEndDate ( ) {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
-    }
-
-    public boolean isState() {
+    public boolean isState ( ) {
         return state;
     }
 
-    public void setState(boolean state) {
-        this.state = state;
-    }
-
-    public void setId(Long id) {
+    public void setId ( Long id ) {
         this.id = id;
     }
 
-    public Long getId() {
-        return id;
+    public void setYear ( String year ) {
+        this.year = year;
+    }
+
+    public void setDateStart ( LocalDate dateStart ) {
+        this.dateStart = dateStart;
+    }
+
+    public void setEndDate ( LocalDate endDate ) {
+        this.endDate = endDate;
+    }
+
+    public void setState ( boolean state ) {
+        this.state = state;
+    }
+
+    public Exercise ( ) {
+    }
+
+    public Exercise ( String year , LocalDate dateStart , LocalDate endDate , boolean state ) {
+        this.year = year;
+        this.dateStart = dateStart;
+        this.endDate = endDate;
+        this.state = state;
+    }
+
+    @Override
+    public String toString ( ) {
+        return "Exercise{" +
+                "id=" + id +
+                ", year='" + year + '\'' +
+                ", dateStart=" + dateStart +
+                ", endDate=" + endDate +
+                ", state=" + state +
+                '}';
     }
 }
