@@ -8,4 +8,5 @@ public interface ExerciceRepository {
 
     List< Exercise > getAll();
     void add(Exercise exercice);
+    void delete(int id);
 }

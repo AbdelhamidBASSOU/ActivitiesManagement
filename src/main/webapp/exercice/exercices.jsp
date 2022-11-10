@@ -12,14 +12,19 @@
     <title>Exercices List</title>
 </head>
 <body>
-<p>
+<div>
     <%
         List< Exercise > exerciceList = (List< Exercise>) request.getAttribute ( "exerciceList" );
 
         for( Exercise exercice : exerciceList ) {
-            out.println( exercice.toString () );
+            out.println ( "<div>" +
+                    "<h2> Year : " + exercice.getYear () + "</h2" +
+                            "<p> date de debut: " + exercice.getDateStart () + "</p>"  + "" +
+                            "<p> date fin : " + exercice.getEndDate () + "</p>" + "" +
+                            "<a href='deleteExercice?id="+exercice.getId () + "'>delete exercice </a>"+
+                    "</div>" );
         }
     %>
-</p>
+</div>
 </body>
 </html>

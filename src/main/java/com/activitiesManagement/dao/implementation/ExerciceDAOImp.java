@@ -22,11 +22,18 @@ public class ExerciceDAOImp implements ExerciceDAO {
         entityManager.getTransaction().commit();
         return exerciseList;
     }
-
     @Override
     public void add ( Exercise exercice ) {
         entityManager.getTransaction().begin();
         entityManager.persist ( exercice );
         entityManager.getTransaction().commit();
     }
+
+    @Override
+    public void delete ( int id ) {
+        entityManager.getTransaction ().begin ();
+        entityManager.remove ( new Exercise ( Long.parseLong (  String.valueOf (  id) )) );
+        entityManager.getTransaction ().commit ();
+    }
+
 }

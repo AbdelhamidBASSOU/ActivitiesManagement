@@ -19,4 +19,9 @@ public class ExerciceServiceImp implements ExerciceService {
     public void add ( Exercise exercice ) {
         exerciceRepository.add(exercice);
     }
+
+    @Override
+    public void delete ( int id ) {
+        exerciceRepository.delete(id);
+    }
 }

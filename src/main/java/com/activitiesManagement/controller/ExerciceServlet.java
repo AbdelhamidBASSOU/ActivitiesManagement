@@ -13,23 +13,30 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
-@WebServlet(name = "ExerciceServlet", urlPatterns ={ "/exercices", "/addExercice"})
+@WebServlet(name = "ExerciceServlet", urlPatterns ={ "/exercices", "/addExercice", "/deleteExercice"})
 public class ExerciceServlet extends HttpServlet {
     ExerciceService exerciceService = new ExerciceServiceImp ( );
     Exercise exercice;
+    List< Exercise> exerciceList;
 
     @Override
     protected void doGet( HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         String path = request.getServletPath ();
         switch (path){
             case "/exercices":
-                List< Exercise> exerciseList = exerciceService.getAll();
-                request.setAttribute ( "exerciceList", exerciseList );
+                exerciceList = exerciceService.getAll();
+                request.setAttribute ( "exerciceList", exerciceList );
                 request.getRequestDispatcher("/exercice/exercices.jsp").forward(request, response);
                 break;
             case  "/addExercice":
                 request.getRequestDispatcher("/exercice/addExercice.jsp").forward(request, response);
+                break;
+            case  "/deleteExercice" :
+                int id = Integer.parseInt ( request.getParameter ( "id" ));
+                exerciceService.delete(id);
+                exerciceList = exerciceService.getAll();
+                request.setAttribute ( "exerciceList", exerciceList );
+                request.getRequestDispatcher("/exercice/exercices.jsp").forward(request, response);
                 break;
         }
     }

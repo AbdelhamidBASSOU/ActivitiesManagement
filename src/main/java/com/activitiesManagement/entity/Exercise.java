@@ -78,6 +78,10 @@ public class Exercise {
         this.state = state;
     }
 
+    public Exercise ( Long id ) {
+        this.id = id;
+    }
+
     @Override
     public String toString ( ) {
         return "Exercise{" +

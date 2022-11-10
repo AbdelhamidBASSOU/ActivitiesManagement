@@ -8,5 +8,6 @@ public interface ExerciceService {
 
     List< Exercise > getAll();
     void add(Exercise exercice);
+    void delete(int id);
 
 }
