@@ -65,6 +65,38 @@
                         </a>
                     </li>
                 </ul>
+                <ul class="nav nav-pills nav-sidebar flex-column">
+                    <li class="nav-item menu-open">
+                        <a href="/exercices" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p> Exercices </p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-pills nav-sidebar flex-column">
+                    <li class="nav-item menu-open">
+                        <a href="/exercices" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p> Activities </p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-pills nav-sidebar flex-column">
+                    <li class="nav-item menu-open">
+                        <a href="/exercices" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p> Participants </p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-pills nav-sidebar flex-column">
+                    <li class="nav-item menu-open">
+                        <a href="/exercices" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p> Utilisateurs </p>
+                        </a>
+                    </li>
+                </ul>
             </nav>
         </div>
     </aside>
