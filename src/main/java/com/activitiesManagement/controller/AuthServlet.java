@@ -66,6 +66,8 @@ public class AuthServlet extends HttpServlet {
 
                 if(user != null){
                     if(password.equals ( user.getPassword () )){
+                        HttpSession session = request.getSession( );
+                        session.setAttribute("user", user);
                         request.setAttribute ( "user", user );
                         request.getRequestDispatcher("/shared/dashboard.jsp").forward(request, response);
                     }

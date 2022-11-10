@@ -28,6 +28,34 @@ public class Exercise {
     @Column(name="state")
     private boolean state;
 
+    @Column(name="description")
+    private String description;
+
+    public String getDescription ( ) {
+        return description;
+    }
+
+    public void setDescription ( String description ) {
+        this.description = description;
+    }
+
+    public Exercise (String year , LocalDate dateStart , LocalDate endDate , boolean state , String description ) {
+        this.year = year;
+        this.dateStart = dateStart;
+        this.endDate = endDate;
+        this.state = state;
+        this.description = description;
+    }
+
+    public Exercise ( Long id , String year , LocalDate dateStart , LocalDate endDate , boolean state , String description ) {
+        this.id = id;
+        this.year = year;
+        this.dateStart = dateStart;
+        this.endDate = endDate;
+        this.state = state;
+        this.description = description;
+    }
+
     public Long getId ( ) {
         return id;
     }
@@ -70,6 +98,7 @@ public class Exercise {
 
     public Exercise ( ) {
     }
+
 
     public Exercise ( String year , LocalDate dateStart , LocalDate endDate , boolean state ) {
         this.year = year;

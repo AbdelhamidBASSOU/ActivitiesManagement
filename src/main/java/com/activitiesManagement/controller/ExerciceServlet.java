@@ -51,11 +51,12 @@ public class ExerciceServlet extends HttpServlet {
                 LocalDate dateDebut = LocalDate.parse (request.getParameter ( "dateDebut" ));
                 LocalDate dateFin = LocalDate.parse ( request.getParameter ( "dateFin" ));
                 Boolean status = Boolean.parseBoolean ( request.getParameter ( "status" ));
+                String description = request.getParameter ( "description" );
 
                 //System.out.println ("year: " + year + " date debut : " + dateDebut + "" +
                 //        "date fin: " + dateFin + "" +
                 //        "status : " + status );
-                exercice = new Exercise ( year, dateDebut, dateFin, status );
+                exercice = new Exercise ( year, dateDebut, dateFin, status, description );
 
                 exerciceService.add(exercice);
                 break;
