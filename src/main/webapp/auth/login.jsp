@@ -8,12 +8,32 @@
 
 <%@ include file="../shared/header.jsp"%>
 
-<%
-    if (request.getAttribute ( "errorMessage" ) != null){
-        out.println ( request.getAttribute ( "errorMessage" ) );
-    }
-%>
 
+
+<section class="d-flex justify-content-md-center pt-5 vh-100">
+    <form method="post" class="form w-50  h-50 mt-5 border p-5" name="login">
+        <div class="form-group">
+            <span class="text-danger">
+                <%
+                    if (request.getAttribute ( "errorMessage" ) != null){
+                        out.println ( request.getAttribute ( "errorMessage" ) );
+                    }
+                %>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" name="username" id="username" class="form-control" placeholder="Enter your username" required>
+        </div>
+        <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required>
+        </div>
+        <div class="form-group mt-4">
+            <input type="submit" value="Login" class="form-control bg-primary text-white">
+        </div>
+    </form>
+</section>
 
 
 <!--
