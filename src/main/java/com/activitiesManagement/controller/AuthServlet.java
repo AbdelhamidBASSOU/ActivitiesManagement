@@ -38,6 +38,7 @@ public class AuthServlet extends HttpServlet {
         Users user;
         switch (path) {
             case "/AuthServlet":
+                System.out.println ("here" );
                 user = new Users();
                 String firstName = request.getParameter("firstName");
                 String lastName = request.getParameter("lastName");
