@@ -1,16 +1,20 @@
-<%@ page import="com.activitiesManagement.entity.Users" %><%--
-  Created by IntelliJ IDEA.
-  User: Youcode
-  Date: 03/11/2022
-  Time: 11:03
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-    <h1>Welcome <% Users user = (Users) request.getAttribute ( "user" ); user.getFirstName (); %></h1>
-</body>
-</html>
+<%@ include file="../components/dashHeader.jsp"%>
+
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <p>this is header</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="main-content content">
+        <div class="container-fluid">
+            <p>this is content</p>
+        </div>
+    </section>
+</div>
+<%@ include file="../components/dashFooter.jsp"%>
