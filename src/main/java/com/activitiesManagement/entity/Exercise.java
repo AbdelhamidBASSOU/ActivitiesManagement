@@ -103,6 +103,7 @@ public class Exercise {
     public Exercise ( ) {
     }
 
+
     public Exercise ( String year , LocalDate dateStart , LocalDate endDate , boolean state ) {
         this.year = year;
         this.dateStart = dateStart;
