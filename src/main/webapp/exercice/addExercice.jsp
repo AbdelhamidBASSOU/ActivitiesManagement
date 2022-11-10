@@ -22,6 +22,8 @@
     <br>
     <input type="radio" name="status" value=0 id="statusFalse"> false
     <br>
+    <textarea name="description" id="description"></textarea>
+    <br>
     <input type="submit" name="submit" value="add Exercice">
 </form>
 </body>
