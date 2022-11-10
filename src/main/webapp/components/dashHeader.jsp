@@ -1,4 +1,7 @@
+<%@ page import="com.activitiesManagement.entity.Users" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<% Users user =  (Users) session.getAttribute ( "user" ); %>
 
 <html lang="en">
 <head>
@@ -53,7 +56,9 @@
                     <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Tayeb SOUINI | Admin</a>
+                    <a href="#" class="d-block">
+                        <%= user.getUsername() + " | " + user.getRole().getName()%>
+                    </a>
                 </div>
             </div>
             <nav class="mt-2">
@@ -67,7 +72,7 @@
                 </ul>
                 <ul class="nav nav-pills nav-sidebar flex-column">
                     <li class="nav-item menu-open">
-                        <a href="/exercices" class="nav-link">
+                        <a href="exercices" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p> Exercices </p>
                         </a>
@@ -75,7 +80,7 @@
                 </ul>
                 <ul class="nav nav-pills nav-sidebar flex-column">
                     <li class="nav-item menu-open">
-                        <a href="/exercices" class="nav-link">
+                        <a href="exercices" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p> Activities </p>
                         </a>
@@ -83,7 +88,7 @@
                 </ul>
                 <ul class="nav nav-pills nav-sidebar flex-column">
                     <li class="nav-item menu-open">
-                        <a href="/exercices" class="nav-link">
+                        <a href="exercices" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p> Participants </p>
                         </a>
@@ -91,7 +96,7 @@
                 </ul>
                 <ul class="nav nav-pills nav-sidebar flex-column">
                     <li class="nav-item menu-open">
-                        <a href="/exercices" class="nav-link">
+                        <a href="exercices" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p> Utilisateurs </p>
                         </a>

@@ -1,4 +1,7 @@
+<%@ page import="com.activitiesManagement.entity.Exercise" %>
+<%@ page import="java.util.List" %>
 <%@ include file="../components/dashHeader.jsp"%>
+<% List < Exercise > exerciceList = (List<Exercise>) request.getAttribute ( "exerciceList" ); %>
 
 <div class="content-wrapper">
     <div class="content-header">
@@ -99,7 +102,19 @@
                                     <td>example description</td>
                                     <td><span>Edit</span> <span>Delete</span></td>
                                 </tr>
-
+                                <%
+                                    for (Exercise exercice : exerciceList) {
+                                        out.println ("<tr>");
+                                            out.println( "<td>" + exercice.getId () + "</td>");
+                                        out.println( "<td>" + exercice.getYear () + "</td>");
+                                        out.println( "<td>" + exercice.getDateStart () + "</td>");
+                                        out.println( "<td>" + exercice.getEndDate () + "</td>");
+                                        out.println( "<td>" + exercice.isState () + "</td>");
+                                        out.println( "<td>" + exercice.getDescription () + "</td>");
+                                        out.println( "<td><a href='/deleteExercice?id=" + exercice.getId () + "'>Delete</a></td>");
+                                        out.println("</tr");
+                                    }
+                                %>
                                 </tbody>
                             </table>
                         </div>
