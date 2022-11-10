@@ -19,4 +19,9 @@ public class ExerciceRepositoryImp implements ExerciceRepository {
     public void add ( Exercise exercice ) {
         exerciceDAO.add(exercice);
     }
+
+    @Override
+    public void delete ( int id ) {
+        exerciceDAO.delete(id);
+    }
 }
