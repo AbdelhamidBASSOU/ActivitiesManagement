@@ -31,9 +31,26 @@ public class ExerciceDAOImp implements ExerciceDAO {
 
     @Override
     public void delete ( int id ) {
-        entityManager.getTransaction ().begin ();
-        entityManager.remove ( new Exercise ( Long.parseLong (  String.valueOf (  id) )) );
-        entityManager.getTransaction ().commit ();
+        System.out.println ("this is dao " + id );
+        Exercise exercice = entityManager.find(Exercise.class, id);
+
+        entityManager.getTransaction().begin();
+        entityManager.remove(exercice);
+        entityManager.getTransaction().commit();
+    }
+
+    @Override
+    public void update ( Exercise exercise ) {
+        System.out.println ("here" );
+        Exercise _exercise = entityManager.find(Exercise.class, exercise.getId ());
+
+        entityManager.getTransaction().begin();
+        _exercise.setYear (exercise.getYear ());
+        _exercise.setDateStart ( exercise.getDateStart () );
+        _exercise.setEndDate ( exercise.getEndDate () );
+        _exercise.setState ( exercise.isState () );
+        _exercise.setDescription ( exercise.getDescription () );
+        entityManager.getTransaction().commit();
     }
 
 }

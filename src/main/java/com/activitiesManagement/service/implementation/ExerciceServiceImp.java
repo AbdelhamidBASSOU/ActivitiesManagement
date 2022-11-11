@@ -22,6 +22,14 @@ public class ExerciceServiceImp implements ExerciceService {
 
     @Override
     public void delete ( int id ) {
+        System.out.println ("this is service : " + id );
         exerciceRepository.delete(id);
     }
+
+    @Override
+    public void update ( Exercise exercise ) {
+        exerciceRepository.update(exercise);
+    }
+
+
 }

@@ -22,6 +22,12 @@ public class ExerciceRepositoryImp implements ExerciceRepository {
 
     @Override
     public void delete ( int id ) {
+        System.out.println ("this is repository " + id );
         exerciceDAO.delete(id);
+    }
+
+    @Override
+    public void update ( Exercise exercise ) {
+        exerciceDAO.update(exercise);
     }
 }
