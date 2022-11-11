@@ -58,8 +58,11 @@ public class ExerciceServlet extends HttpServlet {
                 //        "date fin: " + dateFin + "" +
                 //        "status : " + status );
                 exercice = new Exercise ( year, dateDebut, dateFin, status, description );
-
                 exerciceService.add(exercice);
+
+                exerciceList = exerciceService.getAll();
+                request.setAttribute ( "exerciceList", exerciceList );
+                request.getRequestDispatcher("/exercice/exercices.jsp").forward(request, response);
                 break;
             case "/editExercice":
                 String _year = request.getParameter ( "year" );
@@ -70,8 +73,11 @@ public class ExerciceServlet extends HttpServlet {
                 Long _id = Long.parseLong ( request.getParameter ( "id" ));
 
                 exercice = new Exercise (_id, _year, _dateDebut, _dateFin, _status, _description);
-
                 exerciceService.update(exercice);
+
+                exerciceList = exerciceService.getAll();
+                request.setAttribute ( "exerciceList", exerciceList );
+                request.getRequestDispatcher("/exercice/exercices.jsp").forward(request, response);
                 //System.out.println ("this is informations : " + _year + " " + _dateDebut + "" +
                 //        " " + _dateFin + " " + _status + " " + _description );
                 break;

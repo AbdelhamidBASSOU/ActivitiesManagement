@@ -10,6 +10,12 @@
                 <div class="col-sm-6">
                     <p>Exercise List</p>
                 </div>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addExercice">
+                        Add Exercice
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -51,13 +57,13 @@
 
                                 <%
                                     for (Exercise exercice : exerciceList) {
-                                        out.println ("<tr data-bs-toggle='modal' data-bs-target='#editExercice' onclick='chargingModal(event)'>");
-                                        out.println( "<td>" + exercice.getId () + "</td>");
-                                        out.println( "<td>" + exercice.getYear () + "</td>");
-                                        out.println( "<td>" + exercice.getDateStart () + "</td>");
-                                        out.println( "<td>" + exercice.getEndDate () + "</td>");
-                                        out.println( "<td>" + exercice.isState () + "</td>");
-                                        out.println( "<td>" + exercice.getDescription () + "</td>");
+                                        out.println ("<tr>");
+                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editExercice' onclick='chargingModal(event)'>" + exercice.getId () + "</td>");
+                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editExercice' onclick='chargingModal(event)'>" + exercice.getYear () + "</td>");
+                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editExercice' onclick='chargingModal(event)'>" + exercice.getDateStart () + "</td>");
+                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editExercice' onclick='chargingModal(event)'>" + exercice.getEndDate () + "</td>");
+                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editExercice' onclick='chargingModal(event)'>" + exercice.isState () + "</td>");
+                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editExercice' onclick='chargingModal(event)'>" + exercice.getDescription () + "</td>");
                                         out.println( "<td><a href='deleteExercice?id=" + exercice.getId () + "'>Delete</a></td>");
                                         out.println("</tr>");
                                     }
@@ -101,9 +107,9 @@
                     </div>
                     <div class="form-group">
                         <label for="statusTrue" class="form-check-label">Active</label>
-                        <input type="radio" name="status" id="statusTrue" value=1 class="form-check-input">
+                        <input type="radio" name="status" id="statusTrue" value="true" class="form-check-input">
                         <label for="statusFalse" class="form-check-label">Inactive</label>
-                        <input type="radio" name="status" id="statusFalse" value=0 class="form-check-input">
+                        <input type="radio" name="status" id="statusFalse" value="false" class="form-check-input">
                     </div>
                     <div class="form-group">
                         <label for="description" class="form-label">Description</label>
@@ -119,6 +125,47 @@
     </div>
 </div>
 
+<!-- Add Modal -->
+<div class="modal fade" id="addExercice" tabindex="-1" aria-labelledby="addExerciceLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addExerciceLabel">Add Exercice</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="addExercice" method="post" name="addExercice">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="year" class="form-label">Year</label>
+                        <input type="text" name="year" id="_year" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="dateDebut" class="form-label">Start date</label>
+                        <input type="date" name="dateDebut" id="_dateDebut" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="dateFin" class="form-label">End date</label>
+                        <input type="date" name="dateFin" id="_dateFin" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="statusTrue" class="">Active</label>
+                        <input type="radio" name="status" id="_statusTrue" value="true" class="">
+                        <label for="statusFalse" class="">Inactive</label>
+                        <input type="radio" name="status" id="_statusFalse" value="false" class="">
+                    </div>
+                    <div class="form-group">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="description" id="_description" cols="30" rows="4" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <input type="submit" value="add" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <script>
     function chargingModal(event) {
         let parent = event.target.parentElement;

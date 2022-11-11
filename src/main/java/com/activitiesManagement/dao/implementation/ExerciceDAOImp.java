@@ -41,7 +41,6 @@ public class ExerciceDAOImp implements ExerciceDAO {
 
     @Override
     public void update ( Exercise exercise ) {
-        System.out.println ("here" );
         Exercise _exercise = entityManager.find(Exercise.class, exercise.getId ());
 
         entityManager.getTransaction().begin();
