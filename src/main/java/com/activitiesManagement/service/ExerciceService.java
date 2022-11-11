@@ -10,4 +10,6 @@ public interface ExerciceService {
     void add(Exercise exercice);
     void delete(int id);
 
+    void update(Exercise exercise);
+
 }

@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
-@WebServlet(name = "ExerciceServlet", urlPatterns ={ "/exercices", "/addExercice", "/deleteExercice"})
+@WebServlet(name = "ExerciceServlet", urlPatterns ={ "/exercices", "/addExercice", "/deleteExercice", "/editExercice"})
 public class ExerciceServlet extends HttpServlet {
     ExerciceService exerciceService = new ExerciceServiceImp ( );
     Exercise exercice;
@@ -33,6 +33,7 @@ public class ExerciceServlet extends HttpServlet {
                 break;
             case  "/deleteExercice" :
                 int id = Integer.parseInt ( request.getParameter ( "id" ));
+                System.out.println ("this is servlet : " + id );
                 exerciceService.delete(id);
                 exerciceList = exerciceService.getAll();
                 request.setAttribute ( "exerciceList", exerciceList );
@@ -59,6 +60,20 @@ public class ExerciceServlet extends HttpServlet {
                 exercice = new Exercise ( year, dateDebut, dateFin, status, description );
 
                 exerciceService.add(exercice);
+                break;
+            case "/editExercice":
+                String _year = request.getParameter ( "year" );
+                LocalDate _dateDebut = LocalDate.parse (request.getParameter ( "dateDebut" ));
+                LocalDate _dateFin = LocalDate.parse ( request.getParameter ( "dateFin" ));
+                Boolean _status = Boolean.parseBoolean ( request.getParameter ( "status" ));
+                String _description = request.getParameter ( "description" );
+                Long _id = Long.parseLong ( request.getParameter ( "id" ));
+
+                exercice = new Exercise (_id, _year, _dateDebut, _dateFin, _status, _description);
+
+                exerciceService.update(exercice);
+                //System.out.println ("this is informations : " + _year + " " + _dateDebut + "" +
+                //        " " + _dateFin + " " + _status + " " + _description );
                 break;
         }
     }

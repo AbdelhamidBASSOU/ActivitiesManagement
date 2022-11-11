@@ -18,9 +18,9 @@
     <br>
     <input type="date" placeholder="date de fin" name="dateFin" id="dateFin">
     <br>
-    <input type="radio" name="status" value=1 id="statusTrue">True
+    <input type="radio" name="status" value='true' id="statusTrue">True
     <br>
-    <input type="radio" name="status" value=0 id="statusFalse"> false
+    <input type="radio" name="status" value='false' id="statusFalse"> false
     <br>
     <textarea name="description" id="description"></textarea>
     <br>
