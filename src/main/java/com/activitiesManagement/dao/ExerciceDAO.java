@@ -8,4 +8,5 @@ public interface ExerciceDAO {
     List<Exercise> getAll();
     void add(Exercise exercice);
     void delete(int id);
+    void update(Exercise exercise);
 }
