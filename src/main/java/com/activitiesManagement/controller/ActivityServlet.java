@@ -2,6 +2,7 @@ package com.activitiesManagement.controller;
 
 import com.activitiesManagement.entity.Activity;
 import com.activitiesManagement.entity.Exercise;
+import com.activitiesManagement.entity.Participant;
 import com.activitiesManagement.service.ActivityService;
 import com.activitiesManagement.service.implementation.ActivityServiceImpl;
 import jakarta.servlet.*;
@@ -53,7 +54,7 @@ public class ActivityServlet extends HttpServlet {
                         activity.setStatus(status);
                         activity.setTitle(title);
                         activity.setExercise(new Exercise((long) 1));
-                       // activity.setParticipantList();
+                      //  activity.setParticipantList((List<Participant>) new Participant());
                 activityService.add(activity);
                 break;
         }
