@@ -1,7 +1,15 @@
-<%@ page import="com.activitiesManagement.entity.Exercise" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: Tayeb SOUINI
+  Date: 12/11/2022
+  Time: 18:41
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.activitiesManagement.entity.Users" %>
 <%@ page import="java.util.List" %>
 <%@ include file="../components/dashHeader.jsp"%>
-<% List < Exercise > exerciceList = (List<Exercise>) request.getAttribute ( "exerciceList" ); %>
+<% List < Users > usersList = (List<Users>) request.getAttribute ( "usersList" ); %>
 
 <div class="content-wrapper">
     <div class="content-header">
@@ -12,8 +20,8 @@
                 </div>
                 <div class="col-sm-4"></div>
                 <div class="col-sm-2">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addExercice">
-                        Add Exercice
+                    <button disabled type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUser">
+                       Add User
                     </button>
                 </div>
             </div>
@@ -26,7 +34,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Exercices List</h3>
+                            <h3 class="card-title">User List</h3>
                             <div class="card-tools">
                                 <div class="input-group input-group-sm" style="width: 150px;">
                                     <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
@@ -45,26 +53,25 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Year</th>
-                                    <th>Start</th>
-                                    <th>End</th>
-                                    <th>Status</th>
-                                    <th>Description</th>
-                                    <th>Action</th>
+                                    <th>Fullname</th>
+                                    <th>Phone</th>
+                                    <th>State</th>
+                                    <th>Role</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-
                                 <%
-                                    for (Exercise exercice : exerciceList) {
+                                    for (Users users : usersList) {
                                         out.println ("<tr>");
-                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editExercice' onclick='chargingModal(event)'>" + exercice.getId () + "</td>");
-                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editExercice' onclick='chargingModal(event)'>" + exercice.getYear () + "</td>");
-                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editExercice' onclick='chargingModal(event)'>" + exercice.getDateStart () + "</td>");
-                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editExercice' onclick='chargingModal(event)'>" + exercice.getEndDate () + "</td>");
-                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editExercice' onclick='chargingModal(event)'>" + exercice.isState () + "</td>");
-                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editExercice' onclick='chargingModal(event)'>" + exercice.getDescription () + "</td>");
-                                        out.println( "<td><a href='deleteExercice?id=" + exercice.getId () + "'>Delete</a></td>");
+                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editUser' onclick='chargingModal(event)'>" + users.getId () + "</td>");
+                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editUser' onclick='chargingModal(event)'>" + users.getFirstName () + " " + users.getLastName () + "</td>");
+                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editUser' onclick='chargingModal(event)'>" + users.getPhone ()+ "</td>");
+                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editUSer' onclick='chargingModal(event)'>" + users.isState () + "</td>");
+                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editUSer' onclick='chargingModal(event)'>" + users.getRole ().getName () + "</td>");
+                                        out.println( "<td  class='d-none'  data-bs-toggle='modal' data-bs-target='#editUSer' onclick='chargingModal(event)'>" + users.getEmail () + "</td>");
+                                        out.println( "<td  class='d-none'  data-bs-toggle='modal' data-bs-target='#editUSer' onclick='chargingModal(event)'>" + users.getUsername () + "</td>");
+                                        out.println( "<td  class='d-none'  data-bs-toggle='modal' data-bs-target='#editUSer' onclick='chargingModal(event)'>" + users.getPassword () + "</td>");
+                                        out.println( "<td><a href='deleteUser?id=" + users.getId () + "'>Delete</a></td>");
                                         out.println("</tr>");
                                     }
                                 %>
@@ -83,49 +90,60 @@
 
 <!-- edit modal -->
 <!-- Modal -->
-<div class="modal fade" id="editExercice" tabindex="-1" aria-labelledby="editExerciceLabel" aria-hidden="true">
+<div class="modal fade" id="editUser" tabindex="-1" aria-labelledby="editUserLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editExerciceLabel">Edit Exercice</h5>
+                <h5 class="modal-title" id="editExerciceLabel">Edit User</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="editExercice" method="post" name="editExercice">
-                <input type="hidden" name="id">
+            <form action="editUser" method="post" name="editUser" class="me-3">
                 <div class="modal-body">
-                    <div class="form-group">
-                        <label for="year" class="form-label">Year</label>
-                        <input type="text" name="year" id="year" class="form-control">
+                    <input type="hidden" name="id">
+                    <input type="hidden" name="password" id="password">
+                    <div class="form-group d-flex gap-3">
+                        <div>
+                            <label for="firstname" class="form-label">Firstname</label>
+                            <input type="text" name="firstname" id="firstname" class="form-control">
+                        </div>
+                        <div>
+                            <label for="lastname" class="form-label">Lastname</label>
+                            <input type="text" name="lastname" id="lastname" class="form-control">
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="dateDebut" class="form-label">Start date</label>
-                        <input type="date" name="dateDebut" id="dateDebut" class="form-control">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="email" id="email" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="dateFin" class="form-label">End date</label>
-                        <input type="date" name="dateFin" id="dateFin" class="form-control">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="tel" name="phone" id="phone" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="statusTrue" class="form-check-label">Active</label>
-                        <input type="radio" name="status" id="statusTrue" value="true" class="form-check-input">
-                        <label for="statusFalse" class="form-check-label">Inactive</label>
-                        <input type="radio" name="status" id="statusFalse" value="false" class="form-check-input">
+                        <label for="status" class="form-label">Status</label>
+                        <select class="form-control" name="status" id="status">
+                            <option value="true">Active</option>
+                            <option value="false">inactive</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="description" class="form-label">Description</label>
-                        <textarea name="description" id="description" cols="30" rows="4" class="form-control"></textarea>
+                        <label for="role" class="form-label">Role</label>
+                        <select class="form-control" name="role" id="role">
+                            <option value="utilisateur">Utilisateur</option>
+                            <option value="administrateur">Administrateur</option>
+                        </select>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <input type="submit" value="save changes" class="btn btn-primary">
+                    <input class="btn btn-primary" type="submit" value="save changes">
                 </div>
             </form>
         </div>
     </div>
 </div>
 
-<!-- Add Modal -->
+<!-- Add Modal
 <div class="modal fade" id="addExercice" tabindex="-1" aria-labelledby="addExerciceLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -166,21 +184,22 @@
         </div>
     </div>
 </div>
+-->
 <script>
     function chargingModal(event) {
         let parent = event.target.parentElement;
-        let form = document.forms['editExercice'];
+        console.log(parent);
+        let form = document.forms["editUser"];
 
         form.id.value = parent.children[0].innerText;
-        form.year.value = parent.children[1].innerText;
-        form.dateDebut.value = parent.children[2].innerText;
-        form.dateFin.value = parent.children[3].innerText;
-        if (parent.children[4].innerText == 'false') {
-            document.getElementById('statusFalse').checked  = true;
-        } else {
-            document.getElementById('statusTrue').checked  = true;
-        }
-        form.description.value = parent.children[5].innerText;
+        let fullname = parent.children[1].innerText;
+        fullname = fullname.split(" ");
+        form.firstname.value = fullname[0];
+        form.lastname.value = fullname[1];
+        form.phone.value = parent.children[2].innerText;
+        form.status.value = parent.children[3].innerText
+        form.role.value = parent.children[4].innerText;
+        form.email.value = parent.children[5].innerText;
     }
 </script>
 <%@ include file="../components/dashFooter.jsp"%>

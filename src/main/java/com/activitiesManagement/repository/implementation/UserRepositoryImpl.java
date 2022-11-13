@@ -9,6 +9,8 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.Query;
 
+import java.util.List;
+
 
 public class        UserRepositoryImpl implements UserRepository{
     Users user =new Users();
@@ -31,4 +33,21 @@ public class        UserRepositoryImpl implements UserRepository{
             return null;
         }
     }
+
+    @Override
+    public List < Users > getAll ( ) {
+        return userDao.getAll();
+    }
+
+    @Override
+    public void update ( Users user ) {
+        userDao.update(user);
+    }
+
+    @Override
+    public void delete ( int id ) {
+        userDao.delete(id);
+    }
+
+
 }

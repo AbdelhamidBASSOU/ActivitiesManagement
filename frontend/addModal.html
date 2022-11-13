@@ -10,19 +10,19 @@
 </head>
 <body>
     <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editExercice">
-    edit 
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addExercice">
+    Add Exercice
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="editExercice" tabindex="-1" aria-labelledby="editExerciceLabel" aria-hidden="true">
+<div class="modal fade" id="addExercice" tabindex="-1" aria-labelledby="addExerciceLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editExerciceLabel">Modal title</h5>
+                <h5 class="modal-title" id="addExerciceLabel">Add Exercice</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="editExercice" method="post" name="editExercice">
+            <form action="addExercice" method="post" name="addExercice">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="year" class="form-label">Year</label>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <input type="submit" value="save changes" class="btn btn-primary">
+                    <input type="submit" value="add" class="btn btn-primary">
                 </div>
             </form>
         </div>
