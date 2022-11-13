@@ -6,6 +6,8 @@ import com.activitiesManagement.repository.UserRepository;
 import com.activitiesManagement.repository.implementation.UserRepositoryImpl;
 import com.activitiesManagement.service.UserService;
 
+import java.util.List;
+
 public class UserServiceImpl implements UserService {
     UserRepository userRepo = new UserRepositoryImpl() ;
         @Override
@@ -16,6 +18,21 @@ public class UserServiceImpl implements UserService {
     @Override
     public Users login ( Users user ) {
         return userRepo.login(user);
+    }
+
+    @Override
+    public List < Users > getAll ( ) {
+        return userRepo.getAll();
+    }
+
+    @Override
+    public void update ( Users user ) {
+        userRepo.update(user);
+    }
+
+    @Override
+    public void delete ( int id ) {
+        userRepo.delete(id);
     }
 }
 
