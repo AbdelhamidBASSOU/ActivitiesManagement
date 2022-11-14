@@ -13,6 +13,7 @@ import java.util.List;
 public class UserDaoImpl implements UserDao {
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
     EntityManager entityManager = emf.createEntityManager();
+
     @Override
     public Users add(Users u) {
         entityManager.getTransaction().begin();
@@ -29,6 +30,7 @@ public class UserDaoImpl implements UserDao {
         //CriteriaQuery<Users> all = cq.select(rootEntry);
         //TypedQuery <Users> allQuery = entityManager.createQuery(all);
         //List<Users> usersList = allQuery.getResultList();
+
         entityManager.getTransaction ().begin ();
         Query query = entityManager.createQuery ( "SELECT u FROM Users u" );
         List<Users> usersList = query.getResultList ();
