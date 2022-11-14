@@ -34,5 +34,40 @@
     <p>Submit
         <input type="submit" name="submit" value="submit" /></p>
 </form>
+<!--
+<section class="d-flex justify-content-md-center pt-5 vh-100">
+    <form action="AuthServlet" name="register" method="post" class="form w-50 h-75 border px-5 pt-3">
+        <div class="form-group d-flex gap-4">
+            <div class="firstname w-50">
+                <label for="firstname" class="form-label">Firstname</label>
+                <input type="text" name="firstname" id="firstname" class="form-control" placeholder="firstname" required>
+            </div>
+            <div class="lastname w-50">
+                <label for="lastname" class="form-label">Lastname</label>
+                <input type="text" name="lastname" id="lastname" class="form-control" placeholder="lastname" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="email" id="email" class="form-control" placeholder="Email : example@email.com" required>
+        </div>
+        <div class="form-group">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone : 0607189671" required>
+        </div>
+        <div class="form-group">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" name="username" id="username" class="form-control" placeholder="Enter your username" required>
+        </div>
+        <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required>
+        </div>
+        <div class="form-group mt-3">
+            <input type="submit" value="Sign up" class="form-control bg-primary text-white">
+        </div>
+    </form>
+</section>
+-->
 </body>
 </html>

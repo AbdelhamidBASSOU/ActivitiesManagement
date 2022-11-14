@@ -9,7 +9,9 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "AuthServlet", urlPatterns ={ "/AuthServlet", "/login"})
+
+@WebServlet(name = "AuthServlet", urlPatterns ={ "/AuthServlet", "/login", "/"})
+
 public class AuthServlet extends HttpServlet {
     UserService userService = new UserServiceImpl();
     @Override
@@ -17,10 +19,11 @@ public class AuthServlet extends HttpServlet {
         String path = request.getServletPath ();
         switch (path){
             case "/login":
+            case "/":
                 request.getRequestDispatcher("/auth/login.jsp").forward(request, response);
                 break;
-            case "/AuthServlet":
-                this.getServletContext().getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
+            case "/register":
+                this.getServletContext().getRequestDispatcher("/auth/register.jsp").forward(request, response);
                 break;
             default :
 
@@ -38,6 +41,7 @@ public class AuthServlet extends HttpServlet {
         Users user;
         switch (path) {
             case "/AuthServlet":
+                System.out.println ("here" );
                 user = new Users();
                 String firstName = request.getParameter("firstName");
                 String lastName = request.getParameter("lastName");
@@ -65,6 +69,8 @@ public class AuthServlet extends HttpServlet {
 
                 if(user != null){
                     if(password.equals ( user.getPassword () )){
+                        HttpSession session = request.getSession( );
+                        session.setAttribute("user", user);
                         request.setAttribute ( "user", user );
                         request.getRequestDispatcher("/shared/dashboard.jsp").forward(request, response);
                     }
