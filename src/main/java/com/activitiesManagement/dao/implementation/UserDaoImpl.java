@@ -23,7 +23,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public List < Users > getAll ( ) {
+    public List<Users> getAll() {
         //CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         //CriteriaQuery <Users> cq = cb.createQuery(Users.class);
         //Root <Users> rootEntry = cq.from(Users.class);
@@ -31,31 +31,31 @@ public class UserDaoImpl implements UserDao {
         //TypedQuery <Users> allQuery = entityManager.createQuery(all);
         //List<Users> usersList = allQuery.getResultList();
 
-        entityManager.getTransaction ().begin ();
-        Query query = entityManager.createQuery ( "SELECT u FROM Users u" );
-        List<Users> usersList = query.getResultList ();
-        entityManager.getTransaction ().commit ();
+        entityManager.getTransaction().begin();
+        Query query = entityManager.createQuery("SELECT u FROM Users u");
+        List<Users> usersList = query.getResultList();
+        entityManager.getTransaction().commit();
 
-        System.out.println (usersList.toString () );
+        System.out.println(usersList.toString());
         return usersList;
     }
 
     @Override
-    public void update ( Users user ) {
-        Users _user = entityManager.find(Users.class, user.getId ());
+    public void update(Users user) {
+        Users _user = entityManager.find(Users.class, user.getId());
 
         entityManager.getTransaction().begin();
-        _user.setFirstName (user.getFirstName ());
-        _user.setLastName ( user.getLastName () );
-        _user.setEmail ( user.getEmail () );
-        _user.setPhone ( user.getPhone () );
-        _user.setState ( user.isState () );
-        _user.setRole ( user.getRole () );
+        _user.setFirstName(user.getFirstName());
+        _user.setLastName(user.getLastName());
+        _user.setEmail(user.getEmail());
+        _user.setPhone(user.getPhone());
+        _user.setState(user.isState());
+        _user.setRole(user.getRole());
         entityManager.getTransaction().commit();
     }
 
     @Override
-    public void delete ( int id ) {
+    public void delete(int id) {
         Users user = entityManager.find(Users.class, id);
 
         entityManager.getTransaction().begin();

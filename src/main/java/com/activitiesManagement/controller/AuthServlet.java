@@ -9,7 +9,9 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
 
+
 @WebServlet(name = "AuthServlet", urlPatterns ={ "/AuthServlet", "/login", "/"})
+
 public class AuthServlet extends HttpServlet {
     UserService userService = new UserServiceImpl();
     @Override
@@ -20,8 +22,8 @@ public class AuthServlet extends HttpServlet {
             case "/":
                 request.getRequestDispatcher("/auth/login.jsp").forward(request, response);
                 break;
-            case "/AuthServlet":
-                this.getServletContext().getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
+            case "/register":
+                this.getServletContext().getRequestDispatcher("/auth/register.jsp").forward(request, response);
                 break;
             default :
 

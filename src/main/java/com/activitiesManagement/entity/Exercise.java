@@ -21,6 +21,10 @@ public class Exercise {
     @Column(name = "dateStart")
     private LocalDate dateStart;
 
+    public Exercise(Long id) {
+        this.id = id;
+    }
+
     //@Temporal(TemporalType.DATE)
     @Column(name = "endDate")
     private LocalDate endDate;
