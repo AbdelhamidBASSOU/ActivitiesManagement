@@ -1,7 +1,6 @@
 package com.activitiesManagement.entity;
 
 import jakarta.persistence.*;
-
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -39,6 +38,10 @@ public class Exercise implements Serializable{
     private String description;
 
     public Exercise ( String year , LocalDate dateDebut , LocalDate dateFin , Boolean status , String description ) {
+    }
+
+    public Exercise ( ) {
+
     }
 
     public String getDescription ( ) {
@@ -127,6 +130,5 @@ public class Exercise implements Serializable{
                 ", endDate=" + endDate +
                 ", state=" + state +
                 '}';
-
     }
 }

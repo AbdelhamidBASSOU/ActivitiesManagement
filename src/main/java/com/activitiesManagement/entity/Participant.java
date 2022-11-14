@@ -5,12 +5,12 @@ import jakarta.persistence.*;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name="participant")
-public class Participant extends Users {
+public class Participant extends Users{
 
-    @Column(name="domain", nullable = false)
+    @Column(name="domain")
     private String domain;
 
-    @Column(name="structure" , nullable = false)
+    @Column(name="structure")
     private String structure;
 
     public String getDomain() {
