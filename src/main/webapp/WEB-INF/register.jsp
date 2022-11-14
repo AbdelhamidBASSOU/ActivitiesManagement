@@ -11,7 +11,7 @@
     <title>Registration</title>
 </head>
 <body>
-<form action="AuthServlet" method="post">
+<form action="register" method="post">
     <p>Enter first name
         <input type="text" name="firstName" /></p>
 

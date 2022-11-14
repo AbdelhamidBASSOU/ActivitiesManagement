@@ -21,9 +21,7 @@ public class Exercise  {
     @Column(name = "dateStart")
     private LocalDate dateStart;
 
-    public Exercise(Long id) {
-        this.id = id;
-    }
+
 
     //@Temporal(TemporalType.DATE)
     @Column(name = "endDate")
@@ -35,8 +33,7 @@ public class Exercise  {
     @Column(name="description")
     private String description;
 
-    public Exercise(long l) {
-    }
+
 
     public String getDescription ( ) {
         return description;

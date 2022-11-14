@@ -36,7 +36,7 @@
 </form>
 <!--
 <section class="d-flex justify-content-md-center pt-5 vh-100">
-    <form action="AuthServlet" name="register" method="post" class="form w-50 h-75 border px-5 pt-3">
+    <form action="" name="register" method="post" class="form w-50 h-75 border px-5 pt-3">
         <div class="form-group d-flex gap-4">
             <div class="firstname w-50">
                 <label for="firstname" class="form-label">Firstname</label>
