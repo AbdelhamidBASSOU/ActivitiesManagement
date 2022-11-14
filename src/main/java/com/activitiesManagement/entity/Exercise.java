@@ -2,30 +2,35 @@ package com.activitiesManagement.entity;
 
 import jakarta.persistence.*;
 
-
+import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
-public class Exercise  {
+
+
+public class Exercise implements Serializable{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Long id;
 
-    //@Temporal(TemporalType.DATE)
-    @Column(name= "annee")
+    @Temporal(TemporalType.DATE)
     private String year;
 
-    //@Temporal(TemporalType.DATE)
-    @Column(name = "dateStart")
+    @Temporal(TemporalType.DATE)
     private LocalDate dateStart;
+
 
 
 
     //@Temporal(TemporalType.DATE)
     @Column(name = "endDate")
     private LocalDate endDate;
+
+    //@Temporal(TemporalType.DATE)
+    //private LocalDate endDate;
+
 
     @Column(name="state")
     private boolean state;
@@ -34,6 +39,8 @@ public class Exercise  {
     private String description;
 
 
+    public Exercise ( String year , LocalDate dateDebut , LocalDate dateFin , Boolean status , String description ) {
+    }
 
     public String getDescription ( ) {
         return description;
@@ -64,43 +71,40 @@ public class Exercise  {
         return id;
     }
 
-    public String getYear ( ) {
+    public String getYear() {
         return year;
     }
 
-    public LocalDate getDateStart ( ) {
-        return dateStart;
-    }
-
-    public LocalDate getEndDate ( ) {
-        return endDate;
-    }
-
-    public boolean isState ( ) {
-        return state;
-    }
-
-    public void setId ( Long id ) {
-        this.id = id;
-    }
-
-    public void setYear ( String year ) {
+    public void setYear(String year) {
         this.year = year;
     }
 
-    public void setDateStart ( LocalDate dateStart ) {
+    public LocalDate getDateStart() {
+        return dateStart;
+    }
+
+    public void setDateStart(LocalDate dateStart) {
         this.dateStart = dateStart;
     }
 
-    public void setEndDate ( LocalDate endDate ) {
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
-    public void setState ( boolean state ) {
+    public boolean isState() {
+        return state;
+    }
+
+    public void setState(boolean state) {
         this.state = state;
     }
 
-    public Exercise ( ) {
+    public void setId(Long id) {
+        this.id = id;
     }
 
 
@@ -124,5 +128,6 @@ public class Exercise  {
                 ", endDate=" + endDate +
                 ", state=" + state +
                 '}';
+
     }
 }
