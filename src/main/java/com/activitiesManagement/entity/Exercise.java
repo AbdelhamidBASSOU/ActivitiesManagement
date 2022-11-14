@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
-public class Exercise {
+public class Exercise  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -34,6 +34,9 @@ public class Exercise {
 
     @Column(name="description")
     private String description;
+
+    public Exercise(long l) {
+    }
 
     public String getDescription ( ) {
         return description;
