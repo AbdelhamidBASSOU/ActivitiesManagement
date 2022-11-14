@@ -55,9 +55,10 @@ public class ExerciceServlet extends HttpServlet {
                 String description = request.getParameter ( "description" );
 
                 //System.out.println ("year: " + year + " date debut : " + dateDebut + "" +
-                //        "date fin: " + dateFin + "" +
-                //        "status : " + status );
+                  //     "date fin: " + dateFin + "" +
+                    //  "status : " + status );
                 exercice = new Exercise ( year, dateDebut, dateFin, status, description );
+                //System.out.println (exercice.toString () );
                 exerciceService.add(exercice);
 
                 exerciceList = exerciceService.getAll();

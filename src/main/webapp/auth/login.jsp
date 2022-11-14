@@ -29,6 +29,9 @@
             <label for="password" class="form-label">Password</label>
             <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required>
         </div>
+        <div class="form-group">
+            <a href="register" class="link-muted">register</a>
+        </div>
         <div class="form-group mt-4">
             <input type="submit" value="Login" class="form-control bg-primary text-white">
         </div>

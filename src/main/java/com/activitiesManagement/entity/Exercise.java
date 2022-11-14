@@ -16,20 +16,12 @@ public class Exercise implements Serializable{
     private String year;
 
     @Temporal(TemporalType.DATE)
+    @Column(name = "dateStart")
     private LocalDate dateStart;
 
-
-    //public Exercise(Long id) {
-        //this.id = id;
-    //}
-
-    //@Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.DATE)
     @Column(name = "endDate")
     private LocalDate endDate;
-
-    //@Temporal(TemporalType.DATE)
-    //private LocalDate endDate;
-
 
     @Column(name="state")
     private boolean state;
@@ -38,6 +30,7 @@ public class Exercise implements Serializable{
     private String description;
 
     public Exercise ( String year , LocalDate dateDebut , LocalDate dateFin , Boolean status , String description ) {
+        this.year = year; this.dateStart = dateDebut; this.endDate = dateFin; this.state = status; this.description = description;
     }
 
     public Exercise ( ) {
