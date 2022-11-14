@@ -40,6 +40,10 @@ public class Exercise implements Serializable{
     public Exercise ( String year , LocalDate dateDebut , LocalDate dateFin , Boolean status , String description ) {
     }
 
+    public Exercise ( ) {
+
+    }
+
     public String getDescription ( ) {
         return description;
     }
