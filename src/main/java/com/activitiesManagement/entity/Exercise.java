@@ -1,7 +1,6 @@
 package com.activitiesManagement.entity;
 
 import jakarta.persistence.*;
-
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -127,6 +126,5 @@ public class Exercise implements Serializable{
                 ", endDate=" + endDate +
                 ", state=" + state +
                 '}';
-
     }
 }
