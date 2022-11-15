@@ -1,7 +1,11 @@
 <%@ page import="com.activitiesManagement.entity.Activity" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.activitiesManagement.entity.Exercise" %>
+<%@ page import="com.activitiesManagement.entity.Participant" %>
 <%@ include file="../components/dashHeader.jsp"%>
 <% List < Activity > activityList = (List<Activity>) request.getAttribute ( "activityList" ); %>
+<% List < Exercise > exerciceList = (List<Exercise>) request.getAttribute ( "exerciceList" ); %>
+<% List < Participant > participantList = (List<Participant>) request.getAttribute ( "participantsList" ); %>
 
 <%--
   Created by IntelliJ IDEA.
@@ -165,6 +169,37 @@
                         <label for="title" class="form-label">Title</label>
                         <textarea name="title" id="_title" cols="30" rows="4" class="form-control"></textarea>
                     </div>
+                    <div class="form-group">
+                        <label class="form-label" for="exercice">Exercice</label>
+                        <select class="form-control" id="exercice" name="exercice">
+                            <% for ( Exercise exercise : exerciceList ) {%>
+                                <option value="<%=exercise.getId()%>"> <%= exercise.getDescription()%></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="participant">Participant whit db</label>
+                        <select class="form-control" id="participant" name="participant">
+                            <% for ( Participant participant : participantList ) {%>
+                                <option onclick="addParticipant(e)" value="<%=participant.getId()%>"> <%= participant.getFirstName() + " " + participant.getLastName()%></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="_participant">Participant whitout db</label>
+                        <select class="participant-Select form-control" id="_participant" name="participant">
+                            <option value="1"> Participant 1</option>
+                            <option value="2"> Participant 2</option>
+                            <option value="3"> Participant 3</option>
+                            <option value="4"> Participant 4</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="participantList"> Participants List</label>
+                        <textarea class="form-control" name="participantList" id="participantList">
+
+                        </textarea>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -190,6 +225,12 @@
         form.description.value = parent.children[4].innerText;
         form.title.value = parent.children[5].innerText;
     }
+
+    let participantSelect = document.querySelector(".participant-Select");
+    let result = document.querySelector('#participantList');
+    participantSelect.addEventListener('change', (event) => {
+        result.value += event.target.value + ";";
+    });
 </script>
 <%@ include file="../components/dashFooter.jsp"%>
 

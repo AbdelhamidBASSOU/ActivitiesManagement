@@ -23,6 +23,10 @@ public class Participant extends Users{
 
     }
 
+    public Participant ( long parseLong ) {
+        setId ( parseLong );
+    }
+
     public String getDomain() {
         return domain;
     }
