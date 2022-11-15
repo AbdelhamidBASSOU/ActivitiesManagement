@@ -10,19 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73465663-b3b6-405a-8f08-5cac52f0e103" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/controller/ParticipantServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/dao/ParticipantDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/dao/implementation/ParticipantDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/repository/ParticipantRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/repository/implementation/ParticipantRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/service/ParticipantService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/service/implementation/ParticipantServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/participant/participants.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/entity/Participant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/entity/Participant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/repository/implementation/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/repository/implementation/UserRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/components/dashHeader.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/components/dashHeader.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/participant/participants.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/participant/participants.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
