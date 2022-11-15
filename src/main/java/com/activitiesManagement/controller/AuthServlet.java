@@ -40,7 +40,7 @@ public class AuthServlet extends HttpServlet {
         String password;
         Users user;
         switch (path) {
-            case "/AuthServlet":
+            case "/register":
                 System.out.println ("here" );
                 user = new Users();
                 String firstName = request.getParameter("firstName");
@@ -57,6 +57,8 @@ public class AuthServlet extends HttpServlet {
                 user.setPassword(password);
                 user.setRole(new Role((long) 1));
                 userService.add(user);
+                response.sendRedirect("login");
+
                 break;
             case "/login":
                 System.out.println ("2" );

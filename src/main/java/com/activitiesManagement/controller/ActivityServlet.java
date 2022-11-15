@@ -19,6 +19,8 @@ public class ActivityServlet extends HttpServlet {
     ActivityService activityService = new ActivityServiceImpl( );
     Activity activity;
 
+    List< Activity> activityList;
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -31,6 +33,14 @@ public class ActivityServlet extends HttpServlet {
                 break;
             case  "/addActivity":
                 request.getRequestDispatcher("/activity/addActivity.jsp").forward(request, response);
+                break;
+            case  "/deleteActivity" :
+                int id = Integer.parseInt ( request.getParameter ( "id" ));
+                System.out.println ("this is servlet : " + id );
+                activityService.delete(id);
+                activityList = activityService.getAll();
+                request.setAttribute ( "activityList", activityList );
+                request.getRequestDispatcher("/activity/activities.jsp").forward(request, response);
                 break;
         }
     }
@@ -56,6 +66,28 @@ public class ActivityServlet extends HttpServlet {
                         activity.setExercise(new Exercise((long) 1));
                       //  activity.setParticipantList((List<Participant>) new Participant());
                 activityService.add(activity);
+                break;
+            case "/editActivity":
+                LocalDate date_Debut = LocalDate.parse (request.getParameter ( "dateDebut" ));
+                LocalDate date_Fin = LocalDate.parse ( request.getParameter ( "dateFin" ));
+                String descriptions = request.getParameter ( "description" );
+                Boolean statu = Boolean.parseBoolean ( request.getParameter ( "status" ));
+                String titles = request.getParameter("title");
+                activity = new Activity (  );
+                activity.setDateDebut(date_Debut);
+                activity.setDateFin(date_Fin);
+                activity.setDescription(descriptions);
+                activity.setStatus(statu);
+                activity.setTitle(titles);
+                activity.setExercise(new Exercise((long) 1));
+                //  activity.setParticipantList((List<Participant>) new Participant());
+                activityService.update(activity);
+
+
+                activityList = activityService.getAll();
+                request.setAttribute ( "activityList", activityList );
+                request.getRequestDispatcher("/activity/activities.jsp").forward(request, response);
+
                 break;
         }
     }

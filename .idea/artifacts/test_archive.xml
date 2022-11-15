@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="test_archive">
+    <output-path>$PROJECT_DIR$/out/artifacts/test_archive</output-path>
+    <root id="root" />
+  </artifact>
+</component>

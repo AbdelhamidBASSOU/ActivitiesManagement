@@ -1,34 +1,34 @@
 package com.activitiesManagement.entity;
 
 import jakarta.persistence.*;
-
+import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
-public class Exercise {
+public class Exercise implements Serializable{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Long id;
 
     @Temporal(TemporalType.DATE)
-    private Date year;
+    private String year;
 
     @Temporal(TemporalType.DATE)
-    private Date dateStart;
+    private LocalDate dateStart;
 
 
-    public Exercise(Long id) {
-        this.id = id;
-    }
+    //public Exercise(Long id) {
+        //this.id = id;
+    //}
 
     //@Temporal(TemporalType.DATE)
     @Column(name = "endDate")
     private LocalDate endDate;
 
-    @Temporal(TemporalType.DATE)
-    private LocalDate endDate;
+    //@Temporal(TemporalType.DATE)
+    //private LocalDate endDate;
 
 
     @Column(name="state")
@@ -38,6 +38,10 @@ public class Exercise {
     private String description;
 
     public Exercise ( String year , LocalDate dateDebut , LocalDate dateFin , Boolean status , String description ) {
+    }
+
+    public Exercise ( ) {
+
     }
 
     public String getDescription ( ) {
@@ -69,27 +73,27 @@ public class Exercise {
         return id;
     }
 
-    public Date getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(Date year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
-    public Date getDateStart() {
+    public LocalDate getDateStart() {
         return dateStart;
     }
 
-    public void setDateStart(Date dateStart) {
+    public void setDateStart(LocalDate dateStart) {
         this.dateStart = dateStart;
     }
 
-    public Date getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
@@ -126,9 +130,5 @@ public class Exercise {
                 ", endDate=" + endDate +
                 ", state=" + state +
                 '}';
-
-
-    public Long getId() {
-        return id;
     }
 }
