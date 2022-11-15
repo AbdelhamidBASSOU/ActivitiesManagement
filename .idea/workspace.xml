@@ -11,6 +11,14 @@
   <component name="ChangeListManager">
     <list default="true" id="c31cf348-3ee1-43bc-b8b9-34ddcea4781c" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/artifacts/test_archive.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/b1eeb756-560f-40c6-bebf-ab581560b0e6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/b1eeb756-560f-40c6-bebf-ab581560b0e6/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/b1eeb756-560f-40c6-bebf-ab581560b0e6/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/b1eeb756-560f-40c6-bebf-ab581560b0e6/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/b1eeb756-560f-40c6-bebf-ab581560b0e6/storage_v2/_src_/schema/sys.zb4BAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/ActivitiesManagement_war.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/ActivitiesManagement_war_exploded.xml" beforeDir="false" />
@@ -184,7 +192,7 @@
       <option name="presentableId" value="Default" />
       <updated>1668436003408</updated>
       <workItem from="1668436004787" duration="756000" />
-      <workItem from="1668437782014" duration="9650000" />
+      <workItem from="1668437782014" duration="10147000" />
     </task>
     <servers />
   </component>
