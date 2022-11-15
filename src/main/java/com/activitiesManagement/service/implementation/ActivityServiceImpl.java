@@ -1,6 +1,7 @@
 package com.activitiesManagement.service.implementation;
 
 import com.activitiesManagement.entity.Activity;
+import com.activitiesManagement.entity.Exercise;
 import com.activitiesManagement.repository.ActivityRepository;
 import com.activitiesManagement.repository.implementation.ActivityRepositoryImpl;
 import com.activitiesManagement.service.ActivityService;
@@ -20,4 +21,16 @@ public class ActivityServiceImpl implements ActivityService {
     public void add(Activity activity) {
         activityRepository.add(activity);
     }
+
+    @Override
+    public void delete ( int id ) {
+        System.out.println ("this is service : " + id );
+        activityRepository.delete(id);
+    }
+
+    @Override
+    public void update ( Activity activity ) {
+        activityRepository.update(activity);
+    }
+
 }
