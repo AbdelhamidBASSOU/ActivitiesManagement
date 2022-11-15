@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Tayeb SOUINI
-  Date: 12/11/2022
-  Time: 18:41
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.activitiesManagement.entity.Participant" %>
 <%@ page import="java.util.List" %>
@@ -63,15 +57,15 @@
                                 <%
                                     for (Participant participant : participantList) {
                                         out.println ("<tr>");
-                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editUser' onclick='chargingModal(event)'>" + participant.getId () + "</td>");
-                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editUser' onclick='chargingModal(event)'>" + participant.getFirstName () + " " + participant.getLastName () + "</td>");
-                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editUser' onclick='chargingModal(event)'>" + participant.getPhone ()+ "</td>");
-                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editUSer' onclick='chargingModal(event)'>" + participant.isState () + "</td>");
-                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editUSer' onclick='chargingModal(event)'>" + participant.getRole ().getName () + "</td>");
-                                        out.println( "<td  class='d-none'  data-bs-toggle='modal' data-bs-target='#editUSer' onclick='chargingModal(event)'>" + participant.getEmail () + "</td>");
-                                        out.println( "<td  class='d-none'  data-bs-toggle='modal' data-bs-target='#editUSer' onclick='chargingModal(event)'>" + participant.getUsername () + "</td>");
-                                        out.println( "<td  class='d-none'  data-bs-toggle='modal' data-bs-target='#editUSer' onclick='chargingModal(event)'>" + participant.getPassword () + "</td>");
-                                        out.println( "<td  class='d-none'  data-bs-toggle='modal' data-bs-target='#editUSer' onclick='chargingModal(event)'>" + participant.getStructure () + "</td>");
+                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editParticipant' onclick='chargingModal(event)'>" + participant.getId () + "</td>");
+                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editParticipant' onclick='chargingModal(event)'>" + participant.getFirstName () + " " + participant.getLastName () + "</td>");
+                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editParticipant' onclick='chargingModal(event)'>" + participant.getPhone ()+ "</td>");
+                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editParticipant' onclick='chargingModal(event)'>" + participant.isState () + "</td>");
+                                        out.println( "<td data-bs-toggle='modal' data-bs-target='#editParticipant' onclick='chargingModal(event)'>" + participant.getRole ().getName () + "</td>");
+                                        out.println( "<td  class='d-none'  data-bs-toggle='modal' data-bs-target='#editParticipant' onclick='chargingModal(event)'>" + participant.getEmail () + "</td>");
+                                        out.println( "<td  class='d-none'  data-bs-toggle='modal' data-bs-target='#editParticipant' onclick='chargingModal(event)'>" + participant.getUsername () + "</td>");
+                                        out.println( "<td  class='d-none'  data-bs-toggle='modal' data-bs-target='#editParticipant' onclick='chargingModal(event)'>" + participant.getPassword () + "</td>");
+                                        out.println( "<td  class='d-none'  data-bs-toggle='modal' data-bs-target='#editParticipant' onclick='chargingModal(event)'>" + participant.getStructure () + "</td>");
 
                                         out.println( "<td><a href='deleteParticipant?id=" + participant.getId () + "'>Delete</a></td>");
                                         out.println("</tr>");
@@ -92,7 +86,7 @@
 
 <!-- edit modal -->
 <!-- Modal -->
-<div class="modal fade" id="editUser" tabindex="-1" aria-labelledby="editUserLabel" aria-hidden="true">
+<div class="modal fade" id="editParticipant" tabindex="-1" aria-labelledby="editParticipantLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -191,7 +185,7 @@
     function chargingModal(event) {
         let parent = event.target.parentElement;
         console.log(parent);
-        let form = document.forms["editUser"];
+        let form = document.forms["editParticipant"];
 
         form.id.value = parent.children[0].innerText;
         let fullname = parent.children[1].innerText;

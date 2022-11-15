@@ -4,6 +4,7 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/components/dashHeader.jsp" value="file://$PROJECT_DIR$/src/main/webapp/components" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/participant/participants.jsp" value="file://$PROJECT_DIR$/src/main/webapp/participant" />
       </map>
     </option>
   </component>
