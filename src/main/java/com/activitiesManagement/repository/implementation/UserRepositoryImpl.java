@@ -12,7 +12,7 @@ import jakarta.persistence.Query;
 import java.util.List;
 
 
-public class        UserRepositoryImpl implements UserRepository{
+public class UserRepositoryImpl implements UserRepository{
     Users user =new Users();
     UserDao  userDao = new UserDaoImpl();
     @Override
