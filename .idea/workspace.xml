@@ -10,15 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73465663-b3b6-405a-8f08-5cac52f0e103" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b1eeb756-560f-40c6-bebf-ab581560b0e6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_15_2022_2_44_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_15_2022_2_44_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/controller/ActivityServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/controller/ActivityServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/entity/Participant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/entity/Participant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/activity/activities.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/activity/activities.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/components/dashHeader.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/components/dashHeader.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +201,7 @@
       <workItem from="1668437782014" duration="10147000" />
       <workItem from="1668545142243" duration="1902000" />
       <workItem from="1668549228425" duration="24000" />
-      <workItem from="1668549836644" duration="4400000" />
+      <workItem from="1668549836644" duration="5199000" />
     </task>
     <servers />
   </component>
