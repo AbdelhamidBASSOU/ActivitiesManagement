@@ -28,4 +28,28 @@ public class ActivityDaoImpl implements ActivityDao {
         entityManager.persist ( activity );
         entityManager.getTransaction().commit();
     }
+
+    @Override
+    public void delete ( int id ) {
+        Activity activity = entityManager.find(Activity.class, id);
+
+        entityManager.getTransaction().begin();
+        entityManager.remove(activity);
+        entityManager.getTransaction().commit();
+    }
+
+    @Override
+    public void update ( Activity activity ) {
+        Activity _activity = entityManager.find(Activity.class, activity.getId ());
+
+        entityManager.getTransaction().begin();
+        _activity.setDateDebut (activity.getDateDebut ());
+        _activity.setDateFin(activity.getDateFin());
+        _activity.setDescription(activity.getDescription());
+        _activity.setStatus(activity.getStatus());
+        _activity.setTitle(activity.getTitle());
+
+        entityManager.getTransaction().commit();
+    }
+
 }

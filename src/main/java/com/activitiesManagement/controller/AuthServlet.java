@@ -67,6 +67,8 @@ public class AuthServlet extends HttpServlet {
                 user.setPassword(password);
                 user.setRole(new Role((long) 1));
                 userService.add(user);
+                response.sendRedirect("login");
+
                 break;
             case "/login":
                 username = request.getParameter ( "username" );
