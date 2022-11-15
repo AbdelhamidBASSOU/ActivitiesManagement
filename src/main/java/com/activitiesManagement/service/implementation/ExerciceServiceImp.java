@@ -31,5 +31,8 @@ public class ExerciceServiceImp implements ExerciceService {
         exerciceRepository.update(exercise);
     }
 
-
+    @Override
+    public int count ( ) {
+        return exerciceRepository.count ( );
+    }
 }

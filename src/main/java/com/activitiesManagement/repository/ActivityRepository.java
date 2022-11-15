@@ -9,4 +9,5 @@ public interface ActivityRepository {
 
     List<Activity> getAll();
     void add(Activity activity);
+    int count();
 }

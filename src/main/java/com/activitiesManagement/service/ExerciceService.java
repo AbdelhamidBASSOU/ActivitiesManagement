@@ -11,5 +11,6 @@ public interface ExerciceService {
     void delete(int id);
 
     void update(Exercise exercise);
+    int count();
 
 }

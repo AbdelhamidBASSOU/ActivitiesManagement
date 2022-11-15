@@ -9,16 +9,22 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "UserServlet", urlPatterns ={ "/utilisateurs", "/editUser", "/deleteUser"})
 public class UserServlet extends HttpServlet {
+    HttpSession session;
     UserService userService = new UserServiceImpl ();
     List< Users> usersList;
     @Override
     protected void doGet( HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        session = request.getSession ();
+        if(!session.getAttribute ( "role" ).equals ( "administrateur" )){
+            request.getRequestDispatcher ( "/error/accessDenied.jsp" ).forward ( request, response );
+        }
         String path = request.getServletPath ();
 
         switch (path){

@@ -9,12 +9,16 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.Query;
 
+
 import java.util.List;
 
 
-public class        UserRepositoryImpl implements UserRepository{
+public class UserRepositoryImpl implements UserRepository{
     Users user =new Users();
-    UserDao  userDao = new UserDaoImpl();
+    UserDao userDao = new UserDaoImpl();
+
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
+    EntityManager entityManager = emf.createEntityManager();
     @Override
     public Users add(Users user) {
         return userDao.add(user);
@@ -23,8 +27,6 @@ public class        UserRepositoryImpl implements UserRepository{
     @Override
     public Users login ( Users user ) {
         try {
-            EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
-            EntityManager entityManager = emf.createEntityManager();
             Query query = entityManager.createQuery ( "SELECT u FROM Users  u WHERE u.username= :username" );
             query.setParameter("username", user.getUsername ());
             user = (Users) query.getSingleResult ();
@@ -49,5 +51,10 @@ public class        UserRepositoryImpl implements UserRepository{
         userDao.delete(id);
     }
 
-
+    @Override
+    public int count ( ) {
+        Query query = entityManager.createQuery ( "SELECT COUNT(u) FROM Users  u" );
+        int count = Integer.parseInt ( String.valueOf ( query.getSingleResult () ) );
+        return count;
+    }
 }

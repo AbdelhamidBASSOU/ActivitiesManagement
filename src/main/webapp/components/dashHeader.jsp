@@ -1,6 +1,5 @@
 <%@ page import="com.activitiesManagement.entity.Users" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <% Users user =  (Users) session.getAttribute ( "user" ); %>
 
 <html lang="en">
@@ -63,46 +62,52 @@
                 </div>
             </div>
             <nav class="mt-2">
+                <% if(user.getRole ().getName ().equals ( "administrateur" )) { %>
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-item menu-open">
-                        <a href="/dashboard" class="nav-link">
+                        <a href="dashboard" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p> Dashboard </p>
                         </a>
                     </li>
                 </ul>
+                <% } %>
+                <% if(user.getRole ().getName ().equals ( "administrateur" )) { %>
                 <ul class="nav nav-pills nav-sidebar flex-column">
                     <li class="nav-item menu-open">
                         <a href="exercices" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="nav-icon fas fa-signature"></i>
                             <p> Exercices </p>
                         </a>
                     </li>
                 </ul>
+                <% } %>
                 <ul class="nav nav-pills nav-sidebar flex-column">
                     <li class="nav-item menu-open">
-                        <a href="exercices" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <a href="activities" class="nav-link">
+                            <i class="nav-icon fas fa-user-crown"></i>
                             <p> Activities </p>
                         </a>
                     </li>
                 </ul>
+                <% if(user.getRole ().getName ().equals ( "administrateur" )) { %>
                 <ul class="nav nav-pills nav-sidebar flex-column">
                     <li class="nav-item menu-open">
-                        <a href="exercices" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <a href="participants" class="nav-link">
+                            <i class="nav-icon far fa-people-arrows"></i>
                             <p> Participants </p>
                         </a>
                     </li>
                 </ul>
                 <ul class="nav nav-pills nav-sidebar flex-column">
                     <li class="nav-item menu-open">
-                        <a href="exercices" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <a href="utilisateurs" class="nav-link">
+                            <i class="nav-icon fas fa-users"></i>
                             <p> Utilisateurs </p>
                         </a>
                     </li>
                 </ul>
+                <% }%>
             </nav>
         </div>
     </aside>

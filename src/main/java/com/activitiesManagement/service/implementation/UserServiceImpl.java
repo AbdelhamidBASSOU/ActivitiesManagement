@@ -34,6 +34,11 @@ public class UserServiceImpl implements UserService {
     public void delete ( int id ) {
         userRepo.delete(id);
     }
+
+    @Override
+    public int count ( ) {
+        return userRepo.count();
+    }
 }
 
 

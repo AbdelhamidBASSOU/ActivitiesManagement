@@ -20,4 +20,9 @@ public class ActivityServiceImpl implements ActivityService {
     public void add(Activity activity) {
         activityRepository.add(activity);
     }
+
+    @Override
+    public int count ( ) {
+        return activityRepository.count();
+    }
 }

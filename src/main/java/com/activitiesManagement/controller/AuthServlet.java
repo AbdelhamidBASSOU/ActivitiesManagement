@@ -3,6 +3,8 @@ package com.activitiesManagement.controller;
 import com.activitiesManagement.entity.Role;
 import com.activitiesManagement.entity.Users;
 import com.activitiesManagement.service.*;
+import com.activitiesManagement.service.implementation.ActivityServiceImpl;
+import com.activitiesManagement.service.implementation.ExerciceServiceImp;
 import com.activitiesManagement.service.implementation.UserServiceImpl;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -10,31 +12,39 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 
 
-@WebServlet(name = "AuthServlet", urlPatterns ={ "/AuthServlet", "/login", "/"})
+@WebServlet(name = "AuthServlet", urlPatterns ={ "/register", "/login", "/dashboard"})
 
 public class AuthServlet extends HttpServlet {
     UserService userService = new UserServiceImpl();
+    ActivityService activityService = new ActivityServiceImpl ();
+    ExerciceService exerciceService = new ExerciceServiceImp ();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getServletPath ();
-        switch (path){
+        switch (path) {
             case "/login":
-            case "/":
-                request.getRequestDispatcher("/auth/login.jsp").forward(request, response);
+                request.getRequestDispatcher ( "/auth/login.jsp" ).forward ( request , response );
                 break;
             case "/register":
-                this.getServletContext().getRequestDispatcher("/auth/register.jsp").forward(request, response);
+                this.getServletContext ( ).getRequestDispatcher ( "/auth/register.jsp" ).forward ( request , response );
                 break;
-            default :
+            case "/dashboard":
+                int numberOfUsers = userService.count ( );
+                int numberOfActivities = activityService.count ( );
+                int numberOfExercice = exerciceService.count ( );
 
+                request.setAttribute ( "numberOfUsers" , numberOfUsers );
+                request.setAttribute ( "numberOfActivities" , numberOfActivities );
+                request.setAttribute ( "numberOfExercices " , numberOfExercice );
+
+                request.getRequestDispatcher ( "/shared/dashboard.jsp" ).forward ( request , response );
+            break;
         }
-
-
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println ("1" );
         String path = request.getServletPath ();
         String username;
         String password;
@@ -59,7 +69,6 @@ public class AuthServlet extends HttpServlet {
                 userService.add(user);
                 break;
             case "/login":
-                System.out.println ("2" );
                 username = request.getParameter ( "username" );
                 password = request.getParameter ( "password" );
 
@@ -71,7 +80,16 @@ public class AuthServlet extends HttpServlet {
                     if(password.equals ( user.getPassword () )){
                         HttpSession session = request.getSession( );
                         session.setAttribute("user", user);
-                        request.setAttribute ( "user", user );
+                        session.setAttribute ( "role", user.getRole ().getName () );
+
+                        int numberOfUsers = userService.count();
+                        int numberOfActivities = activityService.count();
+                        int numberOfExercice = exerciceService.count();
+
+                        request.setAttribute ( "numberOfUsers", numberOfUsers );
+                        request.setAttribute ( "numberOfActivities", numberOfActivities );
+                        request.setAttribute ( "numberOfExercices ", numberOfExercice );
+
                         request.getRequestDispatcher("/shared/dashboard.jsp").forward(request, response);
                     }
                     else {

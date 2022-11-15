@@ -10,4 +10,5 @@ public interface ExerciceRepository {
     void add(Exercise exercice);
     void delete(int id);
     void update(Exercise exercise);
+    int count();
 }

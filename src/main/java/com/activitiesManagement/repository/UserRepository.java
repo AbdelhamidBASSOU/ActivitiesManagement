@@ -12,5 +12,6 @@ public interface UserRepository {
     List<Users> getAll();
     void update(Users user);
     void delete (int id);
+    int count();
 
 }
