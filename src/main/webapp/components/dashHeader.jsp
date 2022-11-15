@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/dist/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
@@ -85,7 +85,11 @@
                 <ul class="nav nav-pills nav-sidebar flex-column">
                     <li class="nav-item menu-open">
                         <a href="activities" class="nav-link">
+<<<<<<< HEAD
                             <i class="nav-icon fas fa-user-crown"></i>
+=======
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+>>>>>>> develop
                             <p> Activities </p>
                         </a>
                     </li>
@@ -111,3 +115,4 @@
             </nav>
         </div>
     </aside>
+</div>

@@ -23,11 +23,9 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
     @Override
-<<<<<<< HEAD
     public int count ( ) {
         return activityRepository.count();
     }
-=======
     public void delete ( int id ) {
         System.out.println ("this is service : " + id );
         activityRepository.delete(id);
@@ -37,6 +35,4 @@ public class ActivityServiceImpl implements ActivityService {
     public void update ( Activity activity ) {
         activityRepository.update(activity);
     }
-
->>>>>>> develop
 }

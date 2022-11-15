@@ -9,6 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="c31cf348-3ee1-43bc-b8b9-34ddcea4781c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/ActivitiesManagement_war.xml" beforeDir="false" />
@@ -28,12 +29,28 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/service/implementation/ActivityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/service/implementation/ActivityServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/activity/activities.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/activity/activities.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/auth/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/auth/register.jsp" afterDir="false" />
+=======
+    <list default="true" id="73465663-b3b6-405a-8f08-5cac52f0e103" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/participant/participants.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/participant/participants.jsp" afterDir="false" />
+>>>>>>> develop
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Jsp File" />
+      </list>
+    </option>
+  </component>
+>>>>>>> develop
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -42,6 +59,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
@@ -54,6 +72,8 @@
       </map>
     </option>
   </component>
+=======
+>>>>>>> develop
   <component name="JspContextManager">
     <jsp-to-context jsp-file="file://$PROJECT_DIR$/src/main/webapp/components/dashHeader.jsp" context-file="file://$PROJECT_DIR$/src/main/webapp/activity/activities.jsp" />
   </component>
@@ -94,10 +114,22 @@
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
+<<<<<<< HEAD
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
+=======
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Youcode\ActivitiesManagement\src\main\webapp" />
+      <recent name="C:\Users\Youcode\ActivitiesManagement\src\main\resources" />
+    </key>
+  </component>
+>>>>>>> develop
   <component name="RunManager">
     <configuration name="Tomcat 10.0.27" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.27" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -196,8 +228,12 @@
       <option name="presentableId" value="Default" />
       <updated>1668436003408</updated>
       <workItem from="1668436004787" duration="756000" />
+<<<<<<< HEAD
       <workItem from="1668437782014" duration="9650000" />
       <workItem from="1668517055050" duration="3940000" />
+=======
+      <workItem from="1668437782014" duration="10147000" />
+>>>>>>> develop
     </task>
     <servers />
   </component>

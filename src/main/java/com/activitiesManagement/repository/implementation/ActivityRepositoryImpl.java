@@ -29,12 +29,13 @@ public class ActivityRepositoryImpl implements ActivityRepository {
     }
 
     @Override
-<<<<<<< HEAD
     public int count ( ) {
         Query query = entityManager.createQuery ( "SELECT COUNT(a) FROM Activity  a" );
-        int count = Integer.parseInt ( String.valueOf ( query.getSingleResult () ) );
+        int count = Integer.parseInt ( String.valueOf ( query.getSingleResult ( ) ) );
         return count;
-=======
+    }
+
+    @Override
     public void delete ( int id ) {
         System.out.println ("this is repository " + id );
         activityDAO.delete(id);
@@ -43,6 +44,5 @@ public class ActivityRepositoryImpl implements ActivityRepository {
     @Override
     public void update ( Activity activity ) {
         activityDAO.update(activity);
->>>>>>> develop
     }
 }

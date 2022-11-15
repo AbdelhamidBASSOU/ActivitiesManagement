@@ -4,6 +4,10 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/components/dashHeader.jsp" value="file://$PROJECT_DIR$/src/main/webapp/components" />
+<<<<<<< HEAD
+=======
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/participant/participants.jsp" value="file://$PROJECT_DIR$/src/main/webapp/participant" />
+>>>>>>> develop
       </map>
     </option>
   </component>
