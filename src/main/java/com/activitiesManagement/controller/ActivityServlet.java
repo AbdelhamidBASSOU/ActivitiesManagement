@@ -18,7 +18,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "ActivityServlet", urlPatterns ={ "/activities", "/addActivity"})
+@WebServlet(name = "ActivityServlet", urlPatterns ={ "/activities", "/addActivity" ,"/deleteActivity", "/editActivity"})
 public class ActivityServlet extends HttpServlet {
 
     ActivityService activityService = new ActivityServiceImpl( );
@@ -87,6 +87,7 @@ public class ActivityServlet extends HttpServlet {
                         activity.setExercise(new Exercise((long) 3));
                         activity.setParticipantList(participantList);
                 activityService.add(activity);
+
                 break;
             case "/editActivity":
                 LocalDate date_Debut = LocalDate.parse (request.getParameter ( "dateDebut" ));

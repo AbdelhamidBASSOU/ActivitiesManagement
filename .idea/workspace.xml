@@ -11,6 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="73465663-b3b6-405a-8f08-5cac52f0e103" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/controller/ParticipantServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/controller/ParticipantServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +71,9 @@
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2HXeko8o62pmtWO65AIhb5wtqqj" />
   <component name="ProjectViewState">

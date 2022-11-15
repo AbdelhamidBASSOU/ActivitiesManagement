@@ -38,6 +38,7 @@ public class AuthServlet extends HttpServlet {
         String path = request.getServletPath ();
         String username;
         String password;
+
         Users user;
         switch (path) {
             case "/register":
@@ -75,6 +76,7 @@ public class AuthServlet extends HttpServlet {
                         session.setAttribute("user", user);
                         request.setAttribute ( "user", user );
                         request.getRequestDispatcher("/shared/dashboard.jsp").forward(request, response);
+                        response.sendRedirect("dashboard");
                     }
                     else {
                         request.setAttribute ( "errorMessage", "information invalide" );

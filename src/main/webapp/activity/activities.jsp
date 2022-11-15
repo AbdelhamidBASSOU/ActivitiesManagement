@@ -217,12 +217,12 @@
         form.id.value = parent.children[0].innerText;
         form.dateDebut.value = parent.children[1].innerText;
         form.dateFin.value = parent.children[2].innerText;
-        if (parent.children[3].innerText == 'false') {
+        if (parent.children[4].innerText == 'false') {
             document.getElementById('statusFalse').checked  = true;
         } else {
             document.getElementById('statusTrue').checked  = true;
         }
-        form.description.value = parent.children[4].innerText;
+        form.description.value = parent.children[3].innerText;
         form.title.value = parent.children[5].innerText;
     }
 
