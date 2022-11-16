@@ -11,25 +11,28 @@
   <title>add Activity</title>
 </head>
 <body>
-<form action="addParticipant" method="post">
-  <p>Enter dateDebut
-    <input type="date" name="dateDebut" /></p>
-
-  <p>Enter  dateFin
-    <input type="date" name="dateFin" /></p>
-
-  <p>Enter  description
-    <input type="text" name="description" /></p>
-
-  <p>Select status
-    <input type="radio" name="status" /></p>
-
-  <p>Enter title
-    <input type="text" name="title" /></p>
-
-
-  <p>Submit
-    <input type="submit" name="submit" value="submit" /></p>
+<form action="addParticipant" method="post" name="addParticipant">
+  <input type="text" name="firstname" placeholder="firstname">
+  <br>
+  <input type="text" name="lastname" placeholder="lastname">
+  <br>
+  <input type="tel" name="phone" placeholder="phone">
+  <br>
+  <input type="email" name="email" placeholder="email">
+  <br>
+  <input type="text" name="username" placeholder="username">
+  <br>
+  <input type="password" name="password" placeholder="password">
+  <br>
+  <input type="radio" name="status" value="true"> true
+  <br>
+  <input type="radio" name="status" value="false"> false
+  <br>
+  <input type="text" name="domaine" placeholder="domaine">
+  <br>
+  <input type="text" name="structure" placeholder="structure">
+  <br>
+  <input type="submit" name="submit" value="submit" />
 </form>
 </body>
 </html>

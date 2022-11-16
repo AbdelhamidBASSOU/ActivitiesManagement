@@ -6,9 +6,9 @@ import jakarta.persistence.*;
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name="participant")
 public class Participant extends Users{
-    public Participant(Long id, String firstName, String lastName, String phone, String username, String email, String password, boolean state, Role role, String structure) {
+    public Participant(Long id, String firstName, String lastName, String phone, String username, String email, String password, boolean state, Role role, String structure, String domaine) {
         super(id, firstName, lastName, phone, username, email, password, state, role);
-        this.domain = domain;
+        this.domain = domaine;
         this.structure = structure;
     }
 
@@ -21,6 +21,10 @@ public class Participant extends Users{
 
     public Participant() {
 
+    }
+
+    public Participant ( long parseLong ) {
+        setId ( parseLong );
     }
 
     public String getDomain() {

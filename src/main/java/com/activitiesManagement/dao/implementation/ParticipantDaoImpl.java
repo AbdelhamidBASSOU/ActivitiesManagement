@@ -23,13 +23,6 @@ public class ParticipantDaoImpl implements ParticipantDao {
 
     @Override
     public List<Participant> getAll() {
-        //CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-        //CriteriaQuery <Users> cq = cb.createQuery(Users.class);
-        //Root <Users> rootEntry = cq.from(Users.class);
-        //CriteriaQuery<Users> all = cq.select(rootEntry);
-        //TypedQuery <Users> allQuery = entityManager.createQuery(all);
-        //List<Users> usersList = allQuery.getResultList();
-
         entityManager.getTransaction().begin();
         Query query = entityManager.createQuery("SELECT p FROM Participant p");
         List<Participant> participantList = query.getResultList();
