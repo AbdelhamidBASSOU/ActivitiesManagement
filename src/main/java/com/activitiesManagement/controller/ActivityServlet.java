@@ -3,12 +3,15 @@ package com.activitiesManagement.controller;
 import com.activitiesManagement.entity.Activity;
 import com.activitiesManagement.entity.Exercise;
 import com.activitiesManagement.entity.Participant;
+import com.activitiesManagement.entity.Users;
 import com.activitiesManagement.service.ActivityService;
 import com.activitiesManagement.service.ExerciceService;
 import com.activitiesManagement.service.ParticipantService;
+import com.activitiesManagement.service.UserService;
 import com.activitiesManagement.service.implementation.ActivityServiceImpl;
 import com.activitiesManagement.service.implementation.ExerciceServiceImp;
 import com.activitiesManagement.service.implementation.ParticipantServiceImpl;
+import com.activitiesManagement.service.implementation.UserServiceImpl;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -24,6 +27,7 @@ public class ActivityServlet extends HttpServlet {
     ActivityService activityService = new ActivityServiceImpl( );
     ExerciceService exerciceService = new ExerciceServiceImp ();
     ParticipantService participantService = new ParticipantServiceImpl ();
+    UserService userService = new UserServiceImpl ();
     Activity activity;
 
     List< Activity> activityList;
@@ -39,9 +43,11 @@ public class ActivityServlet extends HttpServlet {
 
                 List<Exercise> exerciseList = exerciceService.getAll();
                 List<Participant> participants = participantService.getAll();
+                List< Users > userList = userService.getAll ();
 
                 request.setAttribute ( "exerciceList", exerciseList );
                 request.setAttribute ( "participantsList", participants );
+                request.setAttribute ( "userList", userList );
                 request.getRequestDispatcher("/activity/activities.jsp").forward(request, response);
                 break;
             case  "/addActivity":
@@ -73,10 +79,13 @@ public class ActivityServlet extends HttpServlet {
 
                 String[] idParticipants = participants.split ( ";" );
                 List<Participant> participantList = new ArrayList <> ();
-                for ( String idParticipant : idParticipants ) {
-                    participantList.add ( new Participant ( Long.parseLong ( idParticipant ) ) );
+                //for ( String idParticipant : idParticipants ) {
+                //    if (!idParticipant.isEmpty ())
+                //        participantList.add ( new Participant ( Long.parseLong ( idParticipant ) ) );
+                //}
+                for ( int i = 0; i < idParticipants.length - 1; i ++ ) {
+                    participantList.add ( new Participant ( Long.parseLong (idParticipants[i])) );
                 }
-
 
                 activity = new Activity (  );
                         activity.setDateDebut(dateDebut);
@@ -102,7 +111,7 @@ public class ActivityServlet extends HttpServlet {
                 activity.setStatus(statu);
                 activity.setTitle(titles);
                 activity.setExercise(new Exercise((long) 1));
-                //  activity.setParticipantList((List<Participant>) new Participant());
+                activity.setParticipantList((List<Participant>) new Participant());
                 activityService.update(activity);
 
 

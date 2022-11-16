@@ -11,7 +11,13 @@
   <component name="ChangeListManager">
     <list default="true" id="73465663-b3b6-405a-8f08-5cac52f0e103" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/controller/ActivityServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/controller/ActivityServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/controller/ParticipantServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/controller/ParticipantServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/dao/implementation/ParticipantDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/dao/implementation/ParticipantDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/entity/Participant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/activitiesManagement/entity/Participant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/activity/activities.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/activity/activities.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/components/dashHeader.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/components/dashHeader.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/participant/addParticipant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/participant/addParticipant.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

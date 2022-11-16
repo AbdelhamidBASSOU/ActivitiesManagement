@@ -5,7 +5,8 @@
 <%@ include file="../components/dashHeader.jsp"%>
 <% List < Activity > activityList = (List<Activity>) request.getAttribute ( "activityList" ); %>
 <% List < Exercise > exerciceList = (List<Exercise>) request.getAttribute ( "exerciceList" ); %>
-<% List < Participant > participantList = (List<Participant>) request.getAttribute ( "participantsList" ); %>
+<% //List < Participant > participantList = (List<Participant>) request.getAttribute ( "participantsList" ); %>
+<% List<Users> usersList = (List< Users>) request.getAttribute ( "userList" ); %>
 
 <%--
   Created by IntelliJ IDEA.
@@ -179,21 +180,13 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="participant">Participant whit db</label>
-                        <select class="form-control" id="participant" name="participant">
-                            <% for ( Participant participant : participantList ) {%>
-                                <option onclick="addParticipant(e)" value="<%=participant.getId()%>"> <%= participant.getFirstName() + " " + participant.getLastName()%></option>
+                        <select class="participant-Select form-control" id="participant" name="participant">
+                            <% for ( Users _user : usersList ) {%>
+                                <option onclick="addParticipant(e)" value="<%=_user.getId()%>"> <%= _user.getFirstName() + " " + _user.getLastName()%></option>
                             <% } %>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label" for="_participant">Participant whitout db</label>
-                        <select class="participant-Select form-control" id="_participant" name="participant">
-                            <option value="1"> Participant 1</option>
-                            <option value="2"> Participant 2</option>
-                            <option value="3"> Participant 3</option>
-                            <option value="4"> Participant 4</option>
-                        </select>
-                    </div>
+
                     <div class="form-group">
                         <label class="form-label" for="participantList"> Participants List</label>
                         <textarea class="form-control" name="participantList" id="participantList">
